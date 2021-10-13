@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a65938429533dbaa27747dfb4fa1798",
+    "content-hash": "f83b41dcf4a7cb0bce0533383b448967",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1590,16 +1590,16 @@
         },
         {
             "name": "symfony/framework-bundle",
-            "version": "v5.3.8",
+            "version": "v5.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/framework-bundle.git",
-                "reference": "ea6e30a8c9534d87187375ef4ee39d48ee40dd2d"
+                "reference": "5d4fcef02a42ea86280afcbacedf8de7a039032c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/ea6e30a8c9534d87187375ef4ee39d48ee40dd2d",
-                "reference": "ea6e30a8c9534d87187375ef4ee39d48ee40dd2d",
+                "url": "https://api.github.com/repos/symfony/framework-bundle/zipball/5d4fcef02a42ea86280afcbacedf8de7a039032c",
+                "reference": "5d4fcef02a42ea86280afcbacedf8de7a039032c",
                 "shasum": ""
             },
             "require": {
@@ -1721,7 +1721,7 @@
             "description": "Provides a tight integration between Symfony components and the Symfony full-stack framework",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/framework-bundle/tree/v5.3.8"
+                "source": "https://github.com/symfony/framework-bundle/tree/v5.3.7"
             },
             "funding": [
                 {
@@ -1737,7 +1737,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-28T07:17:01+00:00"
+            "time": "2021-08-26T08:37:07+00:00"
         },
         {
             "name": "symfony/http-client-contracts",
