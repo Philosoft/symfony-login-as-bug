@@ -1,0 +1,43 @@
+---
+name: Tests
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  testing:
+    name: Automatic testing
+    runs-on: ubuntu-20.04
+    env:
+      APP_ENV: test
+    steps:
+      -   name: Checkout
+          uses: actions/checkout@v2
+
+      -   name: Setup PHP with composer and extensions
+          uses: shivammathur/setup-php@v2 # https://github.com/shivammathur/setup-php
+          with:
+            php-version: '7.2'
+            extensions: mbstring, xml, ctype, iconv, intl
+
+      -   name: Get composer cache directory
+          id: composer-cache
+          run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      -   name: Cache composer dependencies
+          uses: actions/cache@v2
+          with:
+            path: ${{ steps.composer-cache.outputs.dir }}
+            key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+            restore-keys: ${{ runner.os }}-composer-
+
+      -   name: Install dependencies
+          run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      -   name: Symfony version
+          run: php bin/console -V
+
+      - name: Perform tests
+        run: php bin/phpunit --no-coverage --no-interaction
