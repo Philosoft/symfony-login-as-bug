@@ -49,6 +49,8 @@ class MegaTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertStringEndsWith($userFoo->getUserIdentifier(), $client->getResponse()->getContent());
 
+        $client->request('GET', '/');
+
         $client->loginUser($userBar);
         $client->request('GET', '/test-auth');
         $this->assertResponseIsSuccessful();
